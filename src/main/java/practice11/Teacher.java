@@ -24,7 +24,8 @@ public class Teacher extends Person {
             Iterator<Klass> it = klasses.iterator();
             String s = it.next().getNumber()+"";
             while (it.hasNext()) {
-                s =  s+ ", " + it.next().getNumber() ;
+                s =s + ", " +   it.next().getNumber() ;
+                //s =   it.next().getNumber() + ", " + s;
             }
             return (super.introduce() + " I am a Teacher. I teach Class " + s + ".");
         } else {
