@@ -19,6 +19,5 @@ public class Student extends Person{
         } else {
             return (super.introduce() + " I am a Student. I am at Class " + getKlass().getNumber() + ".");
         }
-
     }
 }
