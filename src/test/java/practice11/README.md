@@ -39,7 +39,7 @@ Teacher还有一个isTeaching方法，传入一个学生，返回true/false。�
 
 当学生加入Teacher教的班级的时候，Teacher会打印一个句话，形如：
 
->I am Tom. I know Jerry has joined Class 2.
+>I am Tom. I know Jerry has join````ed Class 2.
 
 当学生成为Teacher教的班级的班长的时候，Teacher会打印一句话，形如：
 

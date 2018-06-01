@@ -1,7 +1,13 @@
 package practice11;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
+
 public class Student extends Person {
     private Klass klass;
+
 
     public Student(int id, String name, int age) {
         super(id, name, age);
@@ -27,4 +33,5 @@ public class Student extends Person {
             return (super.introduce() + " I am a Student. I am at Class " + getKlass().getNumber() + ".");
         }
     }
+
 }

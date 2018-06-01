@@ -153,7 +153,6 @@ public class Practice11Test {
         Student jerry = new Student(1, "Jerry", 8, new Klass(3));
 
         klass2.appendMember(jerry);
-
         assertThat(systemOut().endsWith("I am Tom. I know Jerry has joined Class 2.\n")).isTrue();
     }
 

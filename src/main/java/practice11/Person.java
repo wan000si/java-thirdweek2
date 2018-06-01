@@ -1,5 +1,8 @@
 package practice11;
 
+import java.util.Observable;
+import java.util.Observer;
+
 public class Person {
     private int id;
     private String name;
@@ -54,4 +57,5 @@ public class Person {
         result = prime * result + ((name ==null) ? 0 :name.hashCode());
         return result;
     }
+
 }
