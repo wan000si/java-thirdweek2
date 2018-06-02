@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Klass extends Observable {
+public class Klass {
 
+    public static final int APPEND_MEMBER=0;
+    public static final int ASSIGN_LEADER=1;
     private int number;
     private Student leader;
-    private ArrayList<Student> member;
+    private List<Student> member = new ArrayList<>();
+    private List<Teacher> teachers= new ArrayList<>();
 
     public Klass(int number) {
         this.number = number;
@@ -23,13 +26,22 @@ public class Klass extends Observable {
         return ("Class "+getNumber());
     }
 
+    public void attach(Teacher teacher){
+        teachers.add(teacher);
+    }
+
+    public void notifyObservers(Student student, int flag) {
+        for (Teacher teacher : teachers) {
+            teacher.update(student,this,flag);
+        }
+    }
+
     public void assignLeader(Student student) {
         if (this.member != null && member.contains(student)) {
             this.leader = student;
-            //System.out.print("I am Tom. I know "+student.getName()+" become Leader of "+getDisplayName()+".\n");
-
-            setChanged();
-            notifyObservers(student);
+            notifyObservers(student,ASSIGN_LEADER);
+//            setChanged();
+//            notifyObservers(student);
         } else {
             System.out.print("It is not one of us.\n");
         }
@@ -40,9 +52,10 @@ public class Klass extends Observable {
     }
 
     public void appendMember(Student student) {
-        member = new ArrayList<Student>();
         member.add(student);
-        setChanged();
-        notifyObservers(student);
+        notifyObservers(student,APPEND_MEMBER);
+//        setChanged();
+//        notifyObservers(student);
+
     }
 }

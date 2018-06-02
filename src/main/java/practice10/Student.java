@@ -12,8 +12,8 @@ public class Student extends Person {
         this.klass = klass;
     }
 
-    public Klass setKlass(Klass klass) {
-        return klass;
+    public void setKlass(Klass klass) {
+        this.klass=klass;
     }
 
     public Klass getKlass() {

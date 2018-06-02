@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Klass {
     private int number;
     private Student leader;
-    private ArrayList<Student> member;
+    private ArrayList<Student> member = new ArrayList<>();
 
     public Klass(int number) {
         this.number = number;
@@ -31,7 +31,6 @@ public class Klass {
     }
 
     public void appendMember(Student student) {
-        member = new ArrayList<Student>();
         member.add(student);
     }
 }

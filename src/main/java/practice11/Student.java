@@ -18,14 +18,15 @@ public class Student extends Person {
         this.klass = klass;
     }
 
-    public Klass setKlass(Klass klass) {
-        return klass;
+    public void setKlass(Klass klass) {
+        this.klass=klass;
     }
 
     public Klass getKlass() {
         return klass;
     }
 
+    @Override
     public String introduce() {
         if (klass.getLeader() == this) {
             return (super.introduce() + " I am a Student. I am Leader of Class " + getKlass().getNumber() + ".");
